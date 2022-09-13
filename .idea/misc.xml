@@ -8,15 +8,17 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.35104166666666664" />
-        <entry key="app/src/main/res/layout/activity_user.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.33" />
         <entry key="app/src/main/res/layout/app_fragment.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_add_food.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/fragment_admin.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_log_in.xml" value="0.35104166666666664" />
+        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.34564102564102567" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/fragment_update_food.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.35104166666666664" />
         <entry key="app/src/main/res/layout/fragment_user_preview.xml" value="0.35104166666666664" />
+        <entry key="app/src/main/res/layout/item_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/login_layout.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/register_layout.xml" value="0.26328125" />
         <entry key="app/src/main/res/layout/signup_layout.xml" value="0.33" />
@@ -32,7 +34,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.35052083333333334" />
       </ProjectState>
     </option>
   </component>

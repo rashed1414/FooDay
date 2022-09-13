@@ -7,7 +7,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.fooday.ui.application.admin.ui.AddFoodFragment;
-import com.example.fooday.ui.application.admin.ui.UpdateFoodFragment;
 import com.example.fooday.ui.application.admin.ui.UserPreviewFragment;
 
 public class VPAdapter extends FragmentStateAdapter {
@@ -25,8 +24,7 @@ public class VPAdapter extends FragmentStateAdapter {
                 return new UserPreviewFragment();
             case 1:
                 return new AddFoodFragment();
-            case 2:
-                return new UpdateFoodFragment();
+
             default:
                 return null;
         }
@@ -34,6 +32,6 @@ public class VPAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

@@ -38,9 +38,10 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("create Table Users( UserName TEXT Primary Key, Password TEXT, Email TEXT, RoleID INTEGER, FOREIGN KEY (RoleID) REFERENCES Roles(RoleID))");
 
         MyDB.execSQL("create Table FoodType(FoodTypeID INTEGER PRIMARY KEY AUTOINCREMENT, FoodTypeName TEXT)");
-        MyDB.execSQL("INSERT INTO FoodType (FoodTypeName) VALUES ('Breakfast'), ('Lunch'), ('Dinner')");
+        MyDB.execSQL("INSERT INTO FoodType (FoodTypeName) VALUES ('Appetizer'), ('Main Course'), ('Desert')");
 
         MyDB.execSQL("create Table Food(FoodID INTEGER PRIMARY KEY AUTOINCREMENT, FoodName TEXT, FoodTypeID INTEGER, FOREIGN KEY (FoodTypeID) REFERENCES FoodType(FoodTypeID))");
+        MyDB.execSQL("INSERT INTO Food (FoodName, FoodTypeID) VALUES ('Pizza', 2), ('Burger', 2), ('Salad', 1), ('Ice Cream', 3), ('Cake', 3), ('Pasta', 2)");
 
         MyDB.execSQL("create Table Orders(OrderID INTEGER PRIMARY KEY AUTOINCREMENT,  UserName TEXT, FoodID INTEGER,FoodTypeID INTEGER,DayID INTEGER,NumberOfOrders ITEGER, FOREIGN KEY (UserName) REFERENCES Users(UserName)," +
                 "FOREIGN KEY (FoodID) REFERENCES Food(FoodID),FOREIGN KEY (FoodTypeID) REFERENCES FoodType(FoodTypeID),FOREIGN KEY (DayID) REFERENCES Days(DayID))");
@@ -368,5 +369,37 @@ public class DBHelper extends SQLiteOpenHelper {
             }
         }
         return false;
+    }
+
+    public List<String> GetFoodDayByType(String type, int day){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select FoodName from food where foodtypeid in" +
+                " (select foodtypeid from foodtype where foodtypename = ?)" +
+                " and foodid in (select foodid from dayfood where dayid = ?)",new String[]{type, String.valueOf(day)});
+        List<String> food = new ArrayList<>();
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                food.add(cursor.getString(0));
+            }
+        }
+        return food;
+    }
+
+    public List<List<String>> GetAllOrders(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from orders", null);
+        List<List<String>> orders = new ArrayList<>();
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                List<String> order = new ArrayList<>();
+                order.add(cursor.getString(0));
+                order.add(cursor.getString(1));
+                order.add(cursor.getString(2));
+                order.add(cursor.getString(3));
+                order.add(cursor.getString(4));
+                orders.add(order);
+            }
+        }
+        return orders;
     }
 }

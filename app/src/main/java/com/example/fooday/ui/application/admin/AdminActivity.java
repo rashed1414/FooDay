@@ -36,7 +36,6 @@ public class AdminActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("User Preview"));
         tabLayout.addTab(tabLayout.newTab().setText("Add Food"));
-        tabLayout.addTab(tabLayout.newTab().setText("Update Food"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

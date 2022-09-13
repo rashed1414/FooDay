@@ -20,8 +20,8 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="138dp"
-        android:layout_height="48dp"
+        android:layout_width="142dp"
+        android:layout_height="51dp"
         android:text="@string/login"
         android:textColor="#FFCCBC"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -47,6 +47,7 @@ public class SignUpFragment extends Fragment {
         switcher = (Switch) view.findViewById(R.id.swRole);
         DB = new DBHelper(getContext());
 
+
        switcher.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,7 +76,7 @@ public class SignUpFragment extends Fragment {
                     if(checkuser==false){
                         Boolean insert = DB.insertRegisterData(user,pass,mail,roleVal);
                         if(insert==true){
-                            RegisterActivity.alertBox("Registered successfully"+date.getDay(), getContext());
+                            RegisterActivity.alertBox("Registered successfully", getContext());
                             goHomeScreen(user);
 
                         }else{

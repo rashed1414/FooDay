@@ -32,7 +32,7 @@ public class Food extends DBHelper {
     }
 
     public boolean insertFood(String foodName, String foodType,String day){
-        SQLiteDatabase MyDB = this.getWritableDatabase();
+        SQLiteDatabase MyDB = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("FoodName", foodName);
         contentValues.put("FoodTypeID", dbHelper.GetFoodTypeID(foodType));
@@ -44,6 +44,32 @@ public class Food extends DBHelper {
             insertFoodDay(foodName, dbHelper.GetDayID(day));
             return true;
         }
+    }
+
+    public List<String> GetFoodDayByType(String type, int day){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select FoodName from food where foodtypeid in" +
+                " (select foodtypeid from foodtype where foodtypename = ?)" +
+                " and foodid in (select foodid from foodday where dayid = ?)",new String[]{type, String.valueOf(day)});
+        List<String> food = new ArrayList<>();
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                food.add(cursor.getString(0));
+            }
+        }
+        return food;
+    }
+
+    public List<String> GetAllFoodTypes(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select FoodTypeName from foodtype", null);
+        List<String> foodTypes = new ArrayList<>();
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                foodTypes.add(cursor.getString(0));
+            }
+        }
+        return foodTypes;
     }
 
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.fooday.R;
 import com.example.fooday.db.DBHelper;
+import com.example.fooday.db.query.Food;
 
 import java.util.List;
 
@@ -43,13 +44,21 @@ public class AddFoodFragment extends Fragment {
         List<String> dayList = DB.GetDays();
 
         foodType.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, foodTypeList));
-
         day.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dayList));
+
+        foodType.setOnClickListener(v -> foodType.showDropDown());
+
+        day.setOnClickListener(v -> day.showDropDown());
+
 
         addFood.setOnClickListener(v -> {
             try {
-                DB.insertFood(foodName.getText().toString(), foodType.getText().toString(), day.getText().toString());
-                Toast.makeText(getContext(), "Food added successfully", Toast.LENGTH_SHORT).show();
+                if(foodName.getText().toString().isEmpty() || foodType.getText().toString().isEmpty() || day.getText().toString().isEmpty()){
+                    Toast.makeText(getContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
+                }else {
+                    DB.insertFood(foodName.getText().toString(), foodType.getText().toString(), day.getText().toString());
+                    Toast.makeText(getContext(), "Food added successfully", Toast.LENGTH_SHORT).show();
+                }
             } catch (Exception e) {
                 Toast.makeText(getContext(), "Error adding food", Toast.LENGTH_SHORT).show();
             }
