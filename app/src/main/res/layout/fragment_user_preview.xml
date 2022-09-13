@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/meals"
+        android:layout_width="180dp"
+        android:layout_height="59dp"
+        android:text="Today's Meals"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <TextView
+        android:id="@+id/dinner"
+        android:layout_width="103dp"
+        android:layout_height="45dp"
+        android:text="Dinner"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dinnerMeal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toEndOf="@+id/lunch"
+        app:layout_constraintTop_toBottomOf="@+id/meals"
+        app:layout_constraintVertical_bias="0.335" />
+
+    <TextView
+        android:id="@+id/breakfast"
+        android:layout_width="103dp"
+        android:layout_height="45dp"
+        android:text="Breakfast"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/breakfastMeal"
+        app:layout_constraintEnd_toStartOf="@+id/lunch"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meals"
+        app:layout_constraintVertical_bias="0.331" />
+
+    <TextView
+        android:id="@+id/lunch"
+        android:layout_width="103dp"
+        android:layout_height="45dp"
+        android:text="Lunch"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meals"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="188dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="132dp"
+        android:text="Order Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchMeal"
+        app:layout_constraintVertical_bias="0.823" />
+
+    <TextView
+        android:id="@+id/dinnerMeal"
+        android:layout_width="147dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="304dp"
+        android:text="Dinner Meal"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunch"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/breakfastMeal"
+        android:layout_width="164dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="304dp"
+        android:text="Breakfast Meal"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dinnerMeal"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunch"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/lunchMeal"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="228dp"
+        android:text="Lunch Meal"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunch"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
