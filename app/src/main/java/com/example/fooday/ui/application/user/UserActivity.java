@@ -16,19 +16,16 @@ import android.widget.Toast;
 
 import com.example.fooday.R;
 import com.example.fooday.db.DBHelper;
-import com.example.fooday.db.query.Food;
 
 import java.time.DayOfWeek;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class UserActivity extends AppCompatActivity {
     Button orderNow;
     TextView todayMeal;
     AutoCompleteTextView appetizer,mainCourse,desert;
     DBHelper DB;
-    Food qFood;
     DayOfWeek day;
     Date date;
 

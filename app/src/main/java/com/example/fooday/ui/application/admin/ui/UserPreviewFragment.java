@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import com.example.fooday.R;
 import com.example.fooday.db.DBHelper;
-import com.example.fooday.db.query.Food;
 
 import java.time.DayOfWeek;
 import java.util.Date;
@@ -32,7 +31,6 @@ public class UserPreviewFragment extends Fragment {
     TextView todayMeal;
     AutoCompleteTextView appetizer,mainCourse,desert;
     DBHelper DB;
-    Food qFood;
     View view;
     Date date;
 

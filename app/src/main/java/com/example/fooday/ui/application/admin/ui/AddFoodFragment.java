@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.example.fooday.R;
 import com.example.fooday.db.DBHelper;
-import com.example.fooday.db.query.Food;
 
 import java.util.List;
 
